@@ -6,6 +6,7 @@
   <title>Register — StayNest</title>
   <link rel="stylesheet" href="../../css/pages/account.css">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -31,6 +32,14 @@
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
         </span>
         <input type="email" id="email" placeholder="Email Address" autocomplete="email" required />
+      </div>
+
+      <!-- Phone -->
+      <div class="field">
+        <span class="ico">
+          <i class="fa-solid fa-phone"></i>
+        </span>
+        <input type="tel" id="phone" placeholder="Phone" autocomplete="tel-local" required />
       </div>
 
       <!-- Password -->
@@ -81,11 +90,16 @@
       e.preventDefault();
       const name    = document.getElementById('fullname').value.trim();
       const email   = document.getElementById('email').value.trim();
+      const phone   = document.getElementById('phone').value.trim();
       const pwd     = document.getElementById('password').value;
       const confirm = document.getElementById('confirm').value;
 
-      if (!name || !email || !pwd || !confirm) {
+      if (!name || !email || !phone || !pwd || !confirm) {
         alert('Hãy điền đầy đủ thông tin');
+        return;
+      }
+      if (phone > 11) {
+        alert('Số điện thoại nhập không đúng');
         return;
       }
       if (pwd !== confirm) {
