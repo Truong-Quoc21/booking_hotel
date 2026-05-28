@@ -1,22 +1,3 @@
- /* ── Reset & tokens ─────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-    --navy:       #0b1e3d;
-    --navy-mid:   #122851;
-    --teal:       #0eb8c4;
-    --teal-glow:  #0eb8c460;
-    --white:      #f0f6ff;
-    --muted:      #8baac8;
-    --accent:     #1ee3ef;
-    --font-head:  'Cormorant Garamond', serif;
-    --font-body:  'DM Sans', sans-serif;
-    --hdr-h:      64px;
-    --top-h:      40px;
-}
-
-body { font-family: var(--font-body); background: var(--navy); }
-
     /* ── Top bar ────────────────────────────────────────── */
     .top-bar {
       background: rgba(6, 14, 28, 0.92);
@@ -152,55 +133,3 @@ body { font-family: var(--font-body); background: var(--navy); }
     }
 
     /* ── Right controls ──────────────────────────────────── */
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-left: auto;
-      flex-shrink: 0;
-    }
-
-    .btn-find {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: linear-gradient(135deg, #1266c8, #0b8fde);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 9px 20px;
-      font-size: 14px;
-      font-weight: 600;
-      font-family: var(--font-body);
-      cursor: pointer;
-      transition: box-shadow .22s, transform .18s;
-      white-space: nowrap;
-    }
-    .btn-find:hover {
-      box-shadow: 0 4px 24px rgba(18,102,200,.5);
-      transform: translateY(-1px);
-    }
-    .btn-find svg { width: 16px; height: 16px; }
-
-    .search-box {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-    .search-box input {
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(14,184,196,.22);
-      border-radius: 8px;
-      padding: 8px 14px 8px 14px;
-      color: var(--white);
-      font-size: 13.5px;
-      font-family: var(--font-body);
-      width: 240px;
-      outline: none;
-      transition: border-color .22s, background .22s;
-    }
-    .search-box input::placeholder { color: var(--muted); }
-    .search-box input:focus {
-      border-color: var(--teal);
-      background: rgba(14,184,196,.08);
-    }
