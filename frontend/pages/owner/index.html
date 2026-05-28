@@ -6,6 +6,8 @@
     <title>StayNest - Home</title>
     <link rel="stylesheet" href="../../css/components/header.css">
     <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/pages/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -13,7 +15,212 @@
 <body>
     <div id="header-placeholder"></div>
 
-    
+    <section class="hero">
+        <div class="hero-track" id="heroTrack">
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1400&q=80')"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1400&q=80')"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1400&q=80')"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1400&q=80')"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1400&q=80')"></div>
+        </div>
+
+        <div class="hero-overlay"></div>
+        <div class="search-panel">
+            <h2>Tìm Kiếm</h2>
+            <div class="search-row">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Nhập từ khóa tìm kiếm (ví dụ: tên sản phẩm, loại hình du lịch)..."/>
+            </div>
+            <div class="quick-links">
+                <span class="ql">Nổi bật:</span>
+                <span class="qtag">Điểm đến phổ biến</span>
+                <span class="qtag">Khách sạn nổi bật</span>
+                <span class="qtag">Tour du lịch</span>
+                <span class="qtag">Trải nghiệm</span>
+            </div>
+            <div class="login-hint">
+                <a href="#">Đăng nhập</a> để nhận thêm ưu đãi tìm kiếm
+            </div>
+        </div>
+        <div class="hero-dots" id="heroDots"></div>
+  </section>
+ 
+  <!-- ══════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════ -->
+  <div class="main-content">
+ 
+    <!-- KHÁCH SẠN NỔI BẬT -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="sec-head">
+          <div class="sec-title">
+            <i class="fa-solid fa-hotel"></i>
+            Khách Sạn Nổi Bật
+            <span class="badge">Nổi bật</span>
+          </div>
+          <a href="#" class="see-all">Xem tất cả <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+        </div>
+        <div class="carousel-wrap">
+          <button class="car-btn prev" onclick="scrollCar('hotels',-1)"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="carousel" id="hotels">
+ 
+            <div class="hotel-card">
+              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400&q=70')">
+                <div class="stars"><i class="fa-solid fa-star fa-xs"></i> 4.8</div>
+              </div>
+              <div class="card-body">
+                <div class="hname">Resort Biển Azure</div>
+                <div class="hdesc">Resort Dion Azure với view biển tuyệt đẹp và dịch vụ đẳng cấp 5 sao.</div>
+                <div class="hprice"><span>Giá:</span> <strong>3,000đ</strong></div>
+              </div>
+            </div>
+ 
+            <div class="hotel-card">
+              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=70')">
+                <div class="stars"><i class="fa-solid fa-star fa-xs"></i> 4.7</div>
+              </div>
+              <div class="card-body">
+                <div class="hname">Khách Sạn Grand Central</div>
+                <div class="hdesc">Khách sạn sang trọng ngay trung tâm thành phố, tiện nghi đầy đủ.</div>
+                <div class="hprice"><span>Giá:</span> <strong>6,000đ</strong></div>
+              </div>
+            </div>
+ 
+            <div class="hotel-card">
+              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=70')">
+                <div class="stars"><i class="fa-solid fa-star fa-xs"></i> 4.9</div>
+              </div>
+              <div class="card-body">
+                <div class="hname">Emerald Bay Retreat</div>
+                <div class="hdesc">Jungle resort ẩn mình trong vườn dừa xanh mát ven biển nhiệt đới.</div>
+                <div class="hprice"><span>Giá:</span> <strong>8,500đ</strong></div>
+              </div>
+            </div>
+ 
+            <div class="hotel-card">
+              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&q=70')">
+                <div class="stars"><i class="fa-solid fa-star fa-xs"></i> 4.6</div>
+              </div>
+              <div class="card-body">
+                <div class="hname">Sand Dollar Suites</div>
+                <div class="hdesc">Không gian nghỉ dưỡng sang trọng sát biển với bể bơi vô cực.</div>
+                <div class="hprice"><span>Giá:</span> <strong>5,200đ</strong></div>
+              </div>
+            </div>
+ 
+            <div class="hotel-card">
+              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=70')">
+                <div class="stars"><i class="fa-solid fa-star fa-xs"></i> 4.5</div>
+              </div>
+              <div class="card-body">
+                <div class="hname">Ocean Pearl Resort</div>
+                <div class="hdesc">Resort hạng sang với view biển panoramic và bể bơi vô cực.</div>
+                <div class="hprice"><span>Giá:</span> <strong>9,000đ</strong></div>
+              </div>
+            </div>
+ 
+            <div class="hotel-card">
+              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1529290130-4ca3753253ae?w=400&q=70')">
+                <div class="stars"><i class="fa-solid fa-star fa-xs"></i> 4.7</div>
+              </div>
+              <div class="card-body">
+                <div class="hname">Palms Boutique Hotel</div>
+                <div class="hdesc">Khách sạn boutique phong cách nằm giữa vườn dừa xanh mát.</div>
+                <div class="hprice"><span>Giá:</span> <strong>4,100đ</strong></div>
+              </div>
+            </div>
+ 
+          </div>
+          <button class="car-btn next" onclick="scrollCar('hotels',1)"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+ 
+    <div class="divider"></div>
+ 
+    <!-- ĐỊA ĐIỂM PHỔ BIẾN -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="sec-head">
+          <div class="sec-title">
+            <i class="fa-solid fa-location-dot"></i>
+            Địa Điểm Phổ Biến
+            <span class="badge">Phổ biến</span>
+          </div>
+          <a href="#" class="see-all">Xem tất cả <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+        </div>
+        <div class="carousel-wrap">
+          <button class="car-btn prev" onclick="scrollCar('dests',-1)"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="carousel" id="dests">
+ 
+            <div class="dest-card">
+              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&q=70')">
+                <div class="dinfo">
+                  <div class="dname">Đà Nẵng</div>
+                  <div class="dmeta"><i class="fa-solid fa-location-dot fa-xs"></i> Di tích lịch sử</div>
+                  <div class="ddesc">Thành phố biển sôi động với bãi biển Mỹ Khê nổi tiếng.</div>
+                </div>
+              </div>
+            </div>
+ 
+            <div class="dest-card">
+              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1528127269322-539801943592?w=400&q=70')">
+                <div class="dinfo">
+                  <div class="dname">Sapa</div>
+                  <div class="dmeta"><i class="fa-solid fa-location-dot fa-xs"></i> Miền núi</div>
+                  <div class="ddesc">Ruộng bậc thang kỳ vĩ và văn hóa dân tộc đặc sắc.</div>
+                </div>
+              </div>
+            </div>
+ 
+            <div class="dest-card">
+              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=400&q=70')">
+                <div class="dinfo">
+                  <div class="dname">Hội An</div>
+                  <div class="dmeta"><i class="fa-solid fa-location-dot fa-xs"></i> Di sản UNESCO</div>
+                  <div class="ddesc">Phố cổ đèn lồng lung linh, kiến trúc cổ kính hàng trăm năm.</div>
+                </div>
+              </div>
+            </div>
+ 
+            <div class="dest-card">
+              <div class="thumb" style="background-image:url('../../assets/images/tour1.jpeg')">
+                <div class="dinfo">
+                  <div class="dname">Ninh Bình</div>
+                  <div class="dmeta"><i class="fa-solid fa-location-dot fa-xs"></i> Thiên nhiên</div>
+                  <div class="ddesc">Cảnh quan núi đá vôi hùng vĩ, Tràng An di sản thế giới.</div>
+                </div>
+              </div>
+            </div>
+ 
+            <div class="dest-card">
+              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=400&q=70')">
+                <div class="dinfo">
+                  <div class="dname">Phú Quốc</div>
+                  <div class="dmeta"><i class="fa-solid fa-location-dot fa-xs"></i> Đảo ngọc</div>
+                  <div class="ddesc">Biển xanh, cát trắng, resort sang trọng và hải sản tươi ngon.</div>
+                </div>
+              </div>
+            </div>
+ 
+            <div class="dest-card">
+              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1562602833-0f4ab2fc46e3?w=400&q=70')">
+                <div class="dinfo">
+                  <div class="dname">Hạ Long</div>
+                  <div class="dmeta"><i class="fa-solid fa-location-dot fa-xs"></i> Di sản thiên nhiên</div>
+                  <div class="ddesc">Vịnh Hạ Long với hàng nghìn đảo đá vôi hùng vĩ kỳ bí.</div>
+                </div>
+              </div>
+            </div>
+ 
+          </div>
+          <button class="car-btn next" onclick="scrollCar('dests',1)"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+ 
+  </div><!-- /main-content -->
 
     <div id="footer-placeholder"></div>
 
@@ -32,6 +239,51 @@
 
         loadComponent('header-placeholder', '../../components/header.html');
         loadComponent('footer-placeholder', '../../components/footer.html');
+
+        
+        (function () {
+            const track  = document.getElementById('heroTrack');
+            const dotsEl = document.getElementById('heroDots');
+            const slides = track.querySelectorAll('.hero-slide');
+            const total  = slides.length;
+            let current  = 0;
+            let timer;
+
+            // Tạo dots
+            slides.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+                dot.addEventListener('click', () => goTo(i));
+                dotsEl.appendChild(dot);
+            });
+
+            function goTo(index) {
+                // Xoá active dot cũ
+                dotsEl.querySelectorAll('.hero-dot').forEach(d => d.classList.remove('active'));
+                // Chuyển track sang trái
+                track.style.transform = `translateX(-${index * 100}%)`;
+                // Active dot mới
+                dotsEl.querySelectorAll('.hero-dot')[index].classList.add('active');
+                current = index;
+            }
+
+            function next() {
+                goTo((current + 1) % total);
+            }
+
+            // Auto chạy mỗi 5 giây
+            function startTimer() {
+                timer = setInterval(next, 5000);
+            }
+
+            // Dừng khi click dot rồi chạy lại
+            dotsEl.addEventListener('click', () => {
+                clearInterval(timer);
+                startTimer();
+            });
+
+            startTimer();
+            })();
     </script>
 </body>
 </html>
