@@ -9,5 +9,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mysql2": "^3.22.4",
+    "sequelize": "^6.37.8",
+    "sequelize-cli": "^6.6.5"
   }
 }
