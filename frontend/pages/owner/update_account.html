@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register — StayNest</title>
+  <link rel="stylesheet" href="../../css/pages/account.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="bg"></div>
+
+  <div class="card">
+    <h1 style="font-size: 26px;">Customer Account Management</h1>
+    <p class="sub"></p>
+
+    <form id="registerForm" novalidate>
+
+      <!-- Full Name -->
+      <div class="field">
+        <span class="ico">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </span>
+        <input type="text" id="fullname" placeholder="Full Name" autocomplete="name" required />
+      </div>
+
+      <!-- Email -->
+      <div class="field">
+        <span class="ico">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        </span>
+        <input type="email" id="email" placeholder="Email Address" autocomplete="email" required />
+      </div>
+
+      <!-- Phone -->
+      <div class="field">
+        <span class="ico">
+          <i class="fa-solid fa-phone"></i>
+        </span>
+        <input type="tel" id="phone" placeholder="Phone" autocomplete="tel-local" required />
+      </div>
+
+      <button type="submit" class="btn-submit">Update Account</button>
+
+    </form>
+  </div>
+
+  <!-- Sparkle decoration -->
+  <div class="sparkle">
+    <svg viewBox="0 0 24 24"><path d="M12 2l2.09 6.26L21 9.27l-5 4.73 1.18 6.87L12 17.77l-5.18 3.1L8 13.9 3 9.27l6.91-1.01z"/></svg>
+  </div>
+
+  <script>
+    function togglePwd(id, btn) {
+      const input = document.getElementById(id);
+      const isText = input.type === 'text';
+      input.type = isText ? 'password' : 'text';
+      btn.style.color = isText ? 'rgba(240,246,255,0.4)' : '#0eb8c4';
+    }
+
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name    = document.getElementById('fullname').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const phone   = document.getElementById('phone').value.trim();
+
+      if (!name || !email || !phone) {
+        alert('Hãy điền đầy đủ thông tin');
+        return;
+      }
+      if (phone > 11) {
+        alert('Số điện thoại nhập không đúng');
+        return;
+      }
+      alert('Cập nhật thành công!');
+    });
+  </script>
+
+</body>
+</html>
