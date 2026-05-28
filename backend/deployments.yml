@@ -1,0 +1,10 @@
+services:
+  mysql: 
+    image: mysql:9.0
+    container_name: mysql_container
+    restart: always
+    ports:
+      - "3309:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "@212005Teo"
+      MYSQL_DATABASE: "booking_hotel"
