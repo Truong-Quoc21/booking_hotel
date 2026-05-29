@@ -10,7 +10,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       booking_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'bookings', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       payment_method: {
         type: Sequelize.STRING(50)
