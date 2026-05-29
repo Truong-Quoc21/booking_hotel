@@ -10,7 +10,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       room_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'rooms', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       image_url: {
         type: Sequelize.STRING
