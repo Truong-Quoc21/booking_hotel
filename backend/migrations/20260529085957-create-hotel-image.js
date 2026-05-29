@@ -10,7 +10,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       hotel_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'hotels', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       image_url: {
         type: Sequelize.STRING,
