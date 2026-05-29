@@ -43,3 +43,5 @@ db.Sequelize = Sequelize;
 module.exports = db;
 
 //npx sequelize-cli db:migrate
+
+//npx sequelize-cli db:migrate:undo:all
