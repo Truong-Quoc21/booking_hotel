@@ -8,6 +8,7 @@ module.exports = {
         allowNull: false,
         primaryKey: true,
         references: { model: 'hotels', key: 'id' },
+        onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
       amenity_id: {
@@ -15,6 +16,7 @@ module.exports = {
         allowNull: false,
         primaryKey: true,
         references: { model: 'amenities', key: 'id' },
+        onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       }
     });
