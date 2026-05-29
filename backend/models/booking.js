@@ -10,7 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Booking.belongsTo(models.User, { foreignKey: 'user_id' });
+      Booking.belongsTo(models.Hotel, { foreignKey: 'hotel_id' });
+      Booking.hasMany(models.BookingDetail, { foreignKey: 'booking_id' });
+      Booking.hasOne(models.Payment, { foreignKey: 'booking_id' });
+      Booking.hasOne(models.Review, { foreignKey: 'booking_id' });
+      Booking.belongsToMany(models.Voucher, { through: models.BookingVoucher, foreignKey: 'booking_id' });
     }
   }
   Booking.init({
