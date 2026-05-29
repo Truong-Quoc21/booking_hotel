@@ -8,3 +8,29 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "@212005Teo"
       MYSQL_DATABASE: "booking_hotel"
+    networks:
+      - booking_hotel
+  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_container
+    restart: always
+    depends_on:
+      - mysql
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      UPLOAD_LIMIT: 500M
+    networks:
+      - booking_hotel
+
+networks:
+  booking_hotel:
+    name: booking_hotel
+    driver: bridge
+
+# docker-compose -f ./deployments.yml up -d phpmyadmin
+# docker-compose -f ./deployments.yml up -d
+# docker-compose -f ./deployments.yml down
