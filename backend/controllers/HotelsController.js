@@ -1,8 +1,8 @@
 import { Sequelize } from "sequelize";
 const { Op } = Sequelize;
 import db from "../models/index.js";
-import insertHotelRequest from "../dtos/requests/hotel/insertHotelRequest.js";
-import updateHotelRequest from "../dtos/requests/hotel/updateHotelRequest.js";
+import insertHotelRequests from "../dtos/requests/hotel/insertHotelRequests.js";
+import updateHotelRequests from "../dtos/requests/hotel/updateHotelRequests.js";
 
 export async function getHotels(req, res) {
     try {
@@ -71,7 +71,7 @@ export async function getHotelById(req, res) {
 
 export async function insertHotel(req, res) {
     try {
-        const { error } = insertHotelRequest.validate(req.body)
+        const { error } = insertHotelRequests.validate(req.body)
         if (error) {
             return res.status(400).json({
                 message: 'Dữ liệu không hợp lệ',
@@ -108,7 +108,7 @@ export async function insertHotel(req, res) {
 
 export async function updateHotel(req, res) {
     try {
-        const { error } = updateHotelRequest.validate(req.body)
+        const { error } = updateHotelRequests.validate(req.body)
         if (error) {
             return res.status(400).json({
                 message: 'Dữ liệu không hợp lệ',
