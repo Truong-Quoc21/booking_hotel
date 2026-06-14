@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+      Hotel.belongsTo(models.Destination, { foreignKey: 'destination_id' });
       Hotel.hasMany(models.HotelImage, { foreignKey: 'hotel_id' });
       Hotel.hasMany(models.Room, { foreignKey: 'hotel_id' });
       Hotel.hasMany(models.Booking, { foreignKey: 'hotel_id' });
@@ -19,6 +20,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Hotel.init({
+    destination_id: {                      
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     name: DataTypes.STRING,
     description: DataTypes.TEXT,
     address: DataTypes.STRING,
@@ -38,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Hotel',
     tableName: 'hotels',
     underscored: true,     
-    paranoid: false,
+    paranoid: true,
     timestamps: true
   });
   return Hotel;
