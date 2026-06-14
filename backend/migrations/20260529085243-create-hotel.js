@@ -9,6 +9,16 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      destination_id: {                     
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'destinations',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      },
       name: {
         type: Sequelize.STRING,
         allowNull: false
@@ -54,9 +64,7 @@ module.exports = {
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       },
       deleted_at: {
-        allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
+        type: Sequelize.DATE
       }
     });
   },
